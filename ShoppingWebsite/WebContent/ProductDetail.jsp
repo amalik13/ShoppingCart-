@@ -54,6 +54,46 @@ class="icon-bar"></span>
 <span class="icon-bar"></span>
 </button>
 <a class="navbar-brand" href="#"></a>
+<%  
+String id=(String) session.getValue("id");
+String price=(String) session.getValue("Price");
+String UserName=(String) session.getAttribute("UserName");
+session.setAttribute("UserName", UserName);
+session.setAttribute("id", id);
+session.setAttribute("Price", price);
+String cost=(String) session.getValue("cost");
+ 
+
+%>
+ <script>
+            showMenu = function() {
+                var div = document.getElementById('box1');
+                div.style.display = 'block';
+            }
+            hideMenu = function() {
+                var div = document.getElementById('box1');
+                div.style.display = 'none';
+            }
+        </script>
+
+<form action="logout" align="right">
+<table>
+
+<tr>
+   
+  
+   <td colspan=6 valign="bottom" align="right">
+                <div class="btn btn-primary" class="username" onmouseover="showMenu();" onmouseout="hideMenu();">Welcome "<%=UserName%>"" , Click here to Logout
+                    <span id="box1">
+                        <a href="logout">Logout</a>
+                    </span>
+                </div>
+            </td>
+    
+    
+</table>
+
+</form>
 </div>
 </div>
 </div>

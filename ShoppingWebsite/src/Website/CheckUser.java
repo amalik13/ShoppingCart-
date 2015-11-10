@@ -35,6 +35,10 @@ public class CheckUser extends HttpServlet {
 		 String PWD= request.getParameter("Password") ;
 		 PrintWriter out = response.getWriter();
 		 WebsiteInterface T = new WebsiteInterface();
+		 HttpSession session = request.getSession();
+		 session.setAttribute("UserName", UN);
+		 System.out.println("Username======"+session.getAttribute("UserName"));
+		 
 		 
 		 boolean ExistingUser= T.isUserMatching(UN,PWD);
 		 //ExistingUser=T.isUserExist(UN);
